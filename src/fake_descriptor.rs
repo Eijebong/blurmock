@@ -65,11 +65,11 @@ impl FakeBluetoothGATTDescriptor {
         Ok(self.characteristic.clone())
     }
 
-    pub fn read_value(&self) -> Result<Vec<u8>, Box<Error>> {
+    pub fn read_value(&self, _: Option<u16>) -> Result<Vec<u8>, Box<Error>> {
         self.get_value()
     }
 
-    pub fn write_value(&self, value: Vec<u8>) -> Result<(), Box<Error>> {
+    pub fn write_value(&self, value: Vec<u8>, _: Option<u16>) -> Result<(), Box<Error>> {
         self.set_value(Some(value))
     }
 }
